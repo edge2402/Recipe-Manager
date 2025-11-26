@@ -1,0 +1,25 @@
+<main class="container py-4">
+  <h1 class="mb-4 text-center"><%= recipe.title %></h1>
+
+  <% if (recipe.imageUrl) { %>
+    <img
+      src="<%= recipe.imageUrl %>"
+      alt="<%= recipe.title %>"
+      class="detail-img mx-auto d-block mb-4"
+    />
+  <% } %>
+
+  <ul class="ingredient-list mb-4">
+    <% recipe.ingredients.forEach(ing => { %>
+      <li><%= ing %></li>
+    <% }) %>
+  </ul>
+
+  <p class="mb-5 text-center"><%= recipe.steps.join(', ') %></p>
+
+  <div class="d-flex justify-content-center gap-2 mb-5">
+    <a href="/recipes" class="btn btn-outline-secondary">Back</a>
+    <a href="/recipes/<%= recipe._id %>/edit" class="btn btn-outline-primary">Edit</a>
+    <a href="/recipes/<%= recipe._id %>/delete" class="btn btn-danger">Delete</a>
+  </div>
+</main>

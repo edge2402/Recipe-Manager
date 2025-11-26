@@ -1,0 +1,23 @@
+<h1>All Recipes</h1>
+<a href="/recipes/new" class="btn btn-primary mb-3">Add Recipe</a>
+
+<ul class="recipes-grid">
+  <% recipes.forEach(recipe => { %>
+    <li>
+      <div class="card">
+        <% if (recipe.imageUrl) { %>
+          <img src="<%= recipe.imageUrl %>" alt="<%= recipe.title %>">
+        <% } %>
+        <div class="card-body">
+          <h5 class="card-title"><%= recipe.title %></h5>
+          <p class="card-text">
+            <%= recipe.ingredients.slice(0,3).join(', ') %>…
+          </p>
+          <a href="/recipes/<%= recipe._id %>" class="btn btn-primary btn-sm">
+            View
+          </a>
+        </div>
+      </div>
+    </li>
+  <% }) %>
+</ul>

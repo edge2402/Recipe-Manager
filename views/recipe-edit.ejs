@@ -1,0 +1,56 @@
+
+
+<h1 class="mb-4">Edit Recipe</h1>
+
+<form id="recipeForm" action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+  <!-- Method‐override hidden field (if you’re not using query‐string override) -->
+  <!-- <input type="hidden" name="_method" value="PUT"> -->
+
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      class="form-control"
+      value="<%= recipe.title %>"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="ingredients" class="form-label">Ingredients</label>
+    <textarea
+      id="ingredients"
+      name="ingredients"
+      class="form-control"
+      rows="2"
+      required
+    ><%= recipe.ingredients %></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="steps" class="form-label">Steps</label>
+    <textarea
+      id="steps"
+      name="steps"
+      class="form-control"
+      rows="3"
+      required
+    ><%= recipe.steps %></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label">Image URL</label>
+    <input
+      type="url"
+      id="imageUrl"
+      name="imageUrl"
+      class="form-control"
+      value="<%= recipe.imageUrl %>"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+  <a href="/recipes/<%= recipe._id %>" class="btn btn-secondary ms-2">Cancel</a>
+</form>

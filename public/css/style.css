@@ -1,0 +1,256 @@
+/* ══ Base & Typography ══ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+body {
+  background-color: #FFF7E8;     /* creamy off-white */
+  color: #333333;                /* dark charcoal */
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+/* Remove bullets from all unordered lists */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+
+/* Headings use a more decorative font */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: #D1495B;                /* warm rose */
+}
+
+/* ══ Navbar ══ */
+.navbar {
+  background-color: #F28482;     /* soft coral */
+}
+.navbar-brand, .nav-link{
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+/* ─── Navbar: force full-width & horizontal links ─────────────────────────── */
+.navbar .navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* push them to the right */
+}
+
+/* ─── Recipe-List page: extra gap under the Add button ──────────────────── */
+.btn-add-recipe {
+  margin-bottom: 2rem;       /* push cards down */
+}
+
+.recipes-grid {
+  margin-top: 1rem;          /* tiny gap if you need it */
+}
+
+
+/* ══ Cards & Buttons ══ */
+.card {
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+.btn-primary {
+  background-color: #E07A5F;     /* terracotta */
+  border-color: #E07A5F;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: #D1495B;
+  border-color: #D1495B;
+}
+
+/* ══ Footer ══ */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #555555;
+  font-size: 0.9rem;
+}
+
+/* ══ Form tweaks ══ */
+form label {
+  font-weight: 600;
+  color: #4A4E69;
+}
+input, textarea {
+  border-radius: 0.25rem;
+}
+/* ══ Recipe Cards Grid ══ */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Make sure EJS wraps cards in a .recipes-grid container */
+.recipes-grid .card {
+  transition: transform .2s, box-shadow .2s;
+}
+.recipes-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Card image styling */
+.recipes-grid .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+/* Card body tweaks */
+.recipes-grid .card-body h5 {
+  font-family: 'Playfair Display', serif;
+  color: #D1495B;
+  margin-bottom: .5rem;
+}
+.recipes-grid .card-body p {
+  font-size: .95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* ══ Global tweaks ══ */
+html {
+  font-size: 112%;           /* ~18px base */
+}
+body {
+  text-align: center;        /* center all text by default */
+  padding: 2em;
+}
+
+/* ══ Headings ══ */
+h1, h2, h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #C72C48;             /* warm berry-red accent */
+}
+
+/* ══ Recipe Cards Grid (tweaked) ══ */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.recipes-grid .card {
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.recipes-grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.recipes-grid .card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* center card text */
+.recipes-grid .card-body {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.recipes-grid .card-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #C72C48;
+}
+
+.recipes-grid .card-text {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* ══ Buttons ══ */
+.btn-primary {
+  background-color: #C72C48;
+  border-color: #C72C48;
+  font-size: 1.05rem;
+  padding: 0.65rem 1.25rem;
+  color: inherit; /* Inherits the color from its parent */
+  text-decoration: none; /* Removes the underline */
+}
+
+.btn-primary:hover {
+  background-color: #A61E3A;
+  border-color: #A61E3A;
+}
+
+.btn-outline-primary {
+  color: #C72C48;
+  border-color: #C72C48;
+  font-size: 1.05rem;
+  padding: 0.65rem 1.25rem;
+}
+.btn-outline-secondary{
+  color: #6C757D;
+  border-color: #6C757D;
+  font-size: 1.05rem;
+  padding: 0.65rem 1.25rem;
+}
+
+.btn-danger {
+  color: #DC3545;
+  border-color: #DC3545;
+  font-size: 1.05rem;
+  padding: 0.65rem 1.25rem;
+}
+
+/* ══ Forms ══ */
+form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-align: left;          /* keep form labels left-aligned */
+}
+
+form label {
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+form input, form textarea {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #CCC;
+  border-radius: 0.35rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+/* ── Ingredient list bullets ───────────────────────────────────────────── */
+.ingredient-list {
+  list-style-type: disc;
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.75rem;
+  text-align: left;
+}
+/* Detail-page hero image */
+.detail-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+

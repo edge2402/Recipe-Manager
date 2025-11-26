@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= pageTitle %> | Recipe Manager</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- loads views/partials/header.ejs -->
+  <%- include('./header') %>
+
+  <main class="container py-4">
+    <%- body %>
+  </main>
+
+  <!-- loads views/partials/footer.ejs -->
+  <%- include('./footer') %>
+
+  <script src="/js/validateRecipeForm.js"></script>
+</body>
+</html>
